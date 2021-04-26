@@ -4,11 +4,11 @@
 	"description": "Allows swapping between multiple Roblox accounts.",
 	"manifest_version": 2,
 	"page_action": {
-		"default_icon": "icons/icon.png",
+		"default_icon": "resources/icons/icon.png",
 		"default_popup": "views/popup.html"
 	},
 	"background": {
-		"scripts": ["background.js"]
+		"scripts": ["scripts/background.js"]
 	},
 	"permissions": [
 		"declarativeContent",
