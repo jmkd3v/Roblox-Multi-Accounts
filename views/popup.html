@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Roblox Multi Accounts</title>
+	<link rel="stylesheet" href="../styles/vars.css" />
+    <link rel="stylesheet" href="../styles/popup.css" />
+	<meta charset="UTF-8">
+
+    <script type="module" src="../scripts/popup.js"></script>
+    <script src="../scripts/output_warning.js"></script>
+    <script src="../scripts/a_tag.js"></script>
+  </head>
+  <body>
+	<div class="header-container">
+		<h1>Roblox Multi Accounts</h1>
+		<h4>a <a href="http://jmk.gg/">@jmkdev</a> project</h4>
+	</div>
+	
+	<div class="header-container-ripple">
+		<svg viewBox="0 0 500 100" preserveAspectRatio="none" style="height: 100%; width: 100%; ">
+			<defs>
+				<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+					<stop offset="0%" style="stop-color: #1488cc; stop-opacity: 1" />
+					<stop offset="100%" style="stop-color: #2b32b2; stop-opacity: 1" />
+				</linearGradient>
+			</defs>
+			<path d="M0.00,49.99 C150.00,150.00 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: url(#grad1);">
+			</path>
+		</svg>
+	</div>
+	
+	<div class="user-header-container hidden" style="display: none;">
+		<div class="user-header-container-ripple">
+			<svg viewBox="0 0 500 100" preserveAspectRatio="none" style="height: 100%; width: 100%; ">
+				<path d="M0.00,49.99 C150.00,150.00 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #333;">
+				</path>
+			</svg>
+		</div>
+	</div>
+	
+	<div class="root-container">
+		<div class="account-container">
+			
+		</div>
+		<div class="button-container">
+			<button class="menubtn" id="add-account" title="Adds the logged in account to ">Add</button>
+			<button class="menubtn" id="logout-account" title="Empties the current session. This does not function like the normal logout button as it does not invalidate the cookie.">Logout</button>
+			<button class="menubtn" id="settings-button" title="Opens the settings menu.">Settings</button>
+		</div>
+	</div>
+	<div class="menu-container hidden">
+		<!--
+		<h2 class="title-center">RobloxMultiAccounts</h2>
+		<p class="title-center">
+		a <a href="http://jmk.gg/">@jmkdev</a> project
+		</p>
+		<p>
+		Thank you for using this extension.
+		If you want to help support this extension and my future projects, consider <a href="http://jmk.gg/tw">following me on Twitter</a> or <a href="http://jmk.gg/">visiting my website</a>.
+		</p>
+		<p>
+		How to use:
+		</p>
+		
+		<ol>
+		<li>Log in to a Roblox account</li>
+		<li>Press the "Add" button</li>
+		<li>Press the "Logout" button</li>
+		<li>Log in to your next account</li>
+		<li>Repeat from step 2 until all accounts have been added</li>
+		<li>Click the account you want to use to swap accounts</li>
+		</ol>
+		
+		<button class="bluebtn" id="clear-account" title="Clears all accounts.">Clear All Accounts</button>
+		<button class="bluebtn" id="close-settings" title="Closes the settings menu.">Close</button>
+		-->
+		<div class="setting">
+			<div class="setting-left">
+				<p class="setting-name">
+					Auto Reload
+				</p>
+			</div>
+			<div class="setting-right">
+				<input class="checkbox" type="checkbox">
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

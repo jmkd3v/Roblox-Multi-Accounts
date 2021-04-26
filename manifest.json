@@ -1,0 +1,19 @@
+{
+	"name": "Roblox Multi Accounts",
+	"version": "1.0.0",
+	"description": "Allows swapping between multiple Roblox accounts.",
+	"manifest_version": 2,
+	"page_action": {
+		"default_icon": "icons/icon.png",
+		"default_popup": "views/popup.html"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"declarativeContent",
+		"cookies",
+		"storage",
+		"*://*.roblox.com/"
+	]
+}
