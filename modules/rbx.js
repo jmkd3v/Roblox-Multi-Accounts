@@ -10,7 +10,7 @@ This file is a minimal library for accessing the Roblox API.
 
 const baseSite = "roblox.com"
 
-let genders = {
+let genders = {  // Pointless :)
 	Other: 1,
 	Male: 2,
 	Female: 3
@@ -50,7 +50,7 @@ export async function getGender() {
 		return false;
 	}
 }
- 
+
 export async function getUserProfileHeader(userId) {
 	let response = await fetch(generateOtherEndpoint("www", "users/profile/profileheader-json?userId=" + userId.toString()))
 	if (response.ok) {
