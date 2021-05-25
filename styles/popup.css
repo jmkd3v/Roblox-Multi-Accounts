@@ -43,6 +43,7 @@ body {
 }
 
 .token-element {
+	display: flex;
 	height: 30px;
 	border: none;
 	border-radius: 3px;
@@ -53,6 +54,15 @@ body {
 	text-overflow: ellipsis;
 	cursor: pointer;
 	transition: 300ms ease transform;
+	align-items: center;
+}
+
+.token-element > .token-user-id-element {
+	border-radius: 4px;
+    background: rgb(0, 0, 0, 0.5);
+    padding: 2px;
+    font-size: 90%;
+	margin-left: 3px;
 }
 
 .account-container > .token-element {

@@ -12,8 +12,10 @@ Download the extension at https://chrome.google.com/webstore/detail/cmeicimcdhgo
 */
 
 import * as userTokenElements from "../modules/user-token-elements.js"
+import * as userTokens from "../modules/user-tokens.js"
 import * as token from "../modules/token.js"
 import * as store from "../modules/store.js"
+import * as rbx from "../modules/rbx.js"
 import { updateTokens } from "../modules/upgrade.js"
 import { versionCompare } from "../modules/version-compare.js"
 
@@ -66,12 +68,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 	}
 	
 	const addAccountButton = document.getElementById("add-account");
-	addAccountButton.addEventListener("click", function() {
-		
+	addAccountButton.addEventListener("click", async () => {
+		let authenticatedUser = await rbx.getAuthenticatedUser();
+		let userToken = await userTokens.generateUserToken(authenticatedUser.id, "egg");
+		console.log(userToken);
+		let userTokenElement = userTokenElements.userTokenToElement(userToken);
+
 	})
 
 	const showSettingsButton = document.getElementById("settings-button")
-	const hideSettingsButton = document.getElementById("close-settings")
+	// const hideSettingsButton = document.getElementById("close-settings")
 	const menuContainer = document.getElementsByClassName("menu-container")[0]
 	let allowOpenSettings = true;
 	
@@ -81,6 +87,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		}
 	});
 	
+	/*
 	hideSettingsButton.addEventListener('click', function() {
 		allowOpenSettings = false;
 		menuContainer.classList.add("hidden-right");
@@ -92,4 +99,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 			allowOpenSettings = true;
 		}, 500);
 	});
+	*/
 });

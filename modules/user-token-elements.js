@@ -122,9 +122,15 @@ export function userTokenToElement(userToken) {
     
     let tokenTextElement = document.createElement("span");
     tokenTextElement.classList.add("token-text-element");
-    tokenTextElement.innerHTML = userToken.name + " [" + userToken.id.toString() + "]"
+    tokenTextElement.innerHTML = userToken.name // + " [" + userToken.id.toString() + "]"
     
+    let tokenUserIdElement = document.createElement("div");
+    tokenUserIdElement.classList.add("token-user-id-element");
+    tokenUserIdElement.innerHTML = userToken.id.toString()
+
     tokenElement.appendChild(tokenTextElement);
+    tokenElement.appendChild(tokenUserIdElement);
+    
     accountContainer.appendChild(tokenElement);
 
     return tokenElement;
