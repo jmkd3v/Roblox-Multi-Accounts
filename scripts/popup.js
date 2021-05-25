@@ -42,12 +42,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 	}
 
 	if (isOld) {
-		/*
-
-		This means the data comes from before the new format was introduced.
-		We'll need to update it before using it.
-
-		*/
+		// This means the data comes from before the new format was introduced.
+		// We'll need to update it before using it.
+		
 		let oldTokenStore = userTokenStore[0];  // the old format stored an Array under the storeKey containing the tokens
 
 		const t0 = performance.now();
@@ -67,6 +64,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 		let userTokenElement = userTokenElements.userTokenToElement(userToken);
 		userTokenElement.style.order = i
 	}
+	
+	const addAccountButton = document.getElementById("add-account");
+	addAccountButton.addEventListener("click", function() {
+		
+	})
 
 	const showSettingsButton = document.getElementById("settings-button")
 	const hideSettingsButton = document.getElementById("close-settings")
