@@ -1,0 +1,25 @@
+.account-store {
+    display: flex !important;
+    width: 100% !important;
+    flex-direction: row !important;
+}
+
+.account {
+    display: flex !important;
+    height: 60px !important;
+    align-items: center !important;
+    gap: 10px !important;
+    border: #646464 !important;
+    border-width: 1px 0px !important;
+    border-style: solid !important;
+    width: 100% !important;
+    background: transparent !important;
+    margin: 0 !important;
+    padding-left: 5px !important;
+}
+
+.account-image {
+    border-radius: 100% !important;
+    background: lightgray !important;
+    height: 40px !important;
+}
