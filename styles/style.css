@@ -2,6 +2,7 @@
     display: flex !important;
     width: 100% !important;
     flex-direction: row !important;
+    margin-top: 10px !important;
 }
 
 .account {
@@ -16,6 +17,11 @@
     background: transparent !important;
     margin: 0 !important;
     padding-left: 5px !important;
+}
+
+.account:hover {
+    z-index: 50 !important;
+    border-color: #757575 !important;
 }
 
 .account-image {

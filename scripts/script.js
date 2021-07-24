@@ -12,5 +12,15 @@ Roblox.Dialog.open({
     allowHtmlContentInBody: true
 })
 
-var event = new CustomEvent("PassToBackground", {detail: message});
-window.dispatchEvent(event);
+console.log("injected script: sending...")
+let myEvent = new CustomEvent(
+    "PassToBackground",
+    {
+        detail: "waffle@@"
+    }
+);
+window.dispatchEvent(myEvent);
+
+window.addEventListener("PassToForeground", function(evt) {
+    console.log(evt.detail)
+})

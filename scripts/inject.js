@@ -16,10 +16,12 @@ injectedScript.classList.add("multi-accounts-injected-by-jmk-💖");
 headElement.appendChild(injectedScript);
 
 window.addEventListener("PassToBackground", function(evt) {
+    console.log("HANDING OFF TO BACKGROUND...")
     chrome.runtime.sendMessage(evt.detail);
 }, false);
 
-window.addEventListener("PassToForeground", function(evt) {
-    var event = new CustomEvent("PassToForeground", {detail: evt.detail});
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    console.log("HANDING OFF TO FOREGROUND...")
+    var event = new CustomEvent("PassToForeground", {detail: request});
     window.dispatchEvent(event);
-}, false);
+});
