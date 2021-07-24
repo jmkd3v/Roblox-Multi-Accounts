@@ -11,3 +11,6 @@ Roblox.Dialog.open({
     declineText: "Settings",
     allowHtmlContentInBody: true
 })
+
+var event = new CustomEvent("PassToBackground", {detail: message});
+window.dispatchEvent(event);

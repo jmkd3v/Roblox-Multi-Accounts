@@ -14,3 +14,12 @@ let injectedScript = document.createElement('script');
 injectedScript.src = chrome.runtime.getURL('scripts/script.js');
 injectedScript.classList.add("multi-accounts-injected-by-jmk-💖");
 headElement.appendChild(injectedScript);
+
+window.addEventListener("PassToBackground", function(evt) {
+    chrome.runtime.sendMessage(evt.detail);
+}, false);
+
+window.addEventListener("PassToForeground", function(evt) {
+    var event = new CustomEvent("PassToForeground", {detail: evt.detail});
+    window.dispatchEvent(event);
+}, false);
