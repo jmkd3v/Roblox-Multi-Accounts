@@ -12,6 +12,24 @@ Roblox.Dialog.open({
     allowHtmlContentInBody: true
 })
 
+function generateAccount(name, image, identifier) {
+    // TODO: React.
+    let baseElement = document.createElement("button")
+    baseElement.classList.add("account")
+
+    let imageElement = document.createElement("image")
+    imageElement.classList.add("account-image")
+    imageElement.src = image
+
+    let nameElement = document.createElement("p")
+    nameElement.innerHTML = name
+
+    baseElement.appendChild(imageElement)
+    baseElement.appendChild(nameElement)
+    
+    return baseElement
+}
+
 console.log("injected script: sending...")
 let myEvent = new CustomEvent(
     "PassToBackground",

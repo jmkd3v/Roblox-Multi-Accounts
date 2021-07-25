@@ -30,5 +30,5 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 			? "from a content script:" + sender.tab.url
 			: "from the extension"
 	);
-  chrome.tabs.sendMessage(sender.tab.id, {"waffle": "troll"});
+	chrome.tabs.sendMessage(sender.tab.id, { waffle: "troll" });
 });
