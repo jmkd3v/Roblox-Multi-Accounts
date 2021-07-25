@@ -28,6 +28,10 @@ function openAccountDialog() {
 		declineText: "Settings",
 		allowHtmlContentInBody: true,
 	});
+    
+    // this is a hack because roblox dialogs suck lol
+    let modalContainer = document.getElementById("simplemodal-container");
+    modalContainer.style.height = "auto";
 
 	let accountStore = document.getElementsByClassName("account-store")[0];
 	let getAccountsEvent = new CustomEvent("PassToBackground", {
@@ -42,7 +46,20 @@ function openAccountDialog() {
 			let accounts = evt.detail.accounts;
 			console.log(accounts);
 			for (let account of accounts) {
-				accountStore.appendChild(generateAccount(account.name, account.image));
+                let accountElement = generateAccount(account.name, account.image);
+                accountElement.addEventListener("click", function() {
+                    Roblox.Dialog.close();
+
+                    let accountChosenEvent = new CustomEvent("PassToBackground", {
+                        detail: {
+                            question: "accountChosen",
+                            id: account.id
+                        },
+                    });
+                
+                });
+
+				accountStore.appendChild(accountElement);
 			}
 		},
 		{ once: true }
