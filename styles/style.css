@@ -1,7 +1,7 @@
 .account-store {
     display: flex !important;
     width: 100% !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     margin-top: 10px !important;
 }
 

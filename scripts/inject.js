@@ -22,6 +22,6 @@ window.addEventListener("PassToBackground", function(evt) {
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log("HANDING OFF TO FOREGROUND...")
-    var event = new CustomEvent("PassToForeground", {detail: request});
+    var event = new CustomEvent("FG_" + request.answer, {detail: request});
     window.dispatchEvent(event);
 });
