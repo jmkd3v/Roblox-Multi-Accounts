@@ -67,6 +67,8 @@ chrome.runtime.onInstalled.addListener(function () {
 	});
 });
 
+console.log(userTokenStore)
+
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	console.log(request);
 	console.log(request.question);
