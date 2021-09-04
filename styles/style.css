@@ -51,3 +51,12 @@ html.obscure {
 .obscure-overlay.obscure {
     backdrop-filter: blur(5px);
 }
+
+.custom-modal {
+    position: absolute !important;
+    left: 50vw !important;
+    top: 50vh !important;
+    transform: translate(-50%, -50%) !important;
+    height: auto !important;
+    width: 400px !important;
+}

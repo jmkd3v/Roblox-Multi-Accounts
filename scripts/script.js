@@ -31,7 +31,7 @@ function openAccountDialog() {
     
     // this is a hack because roblox dialogs suck lol
     let modalContainer = document.getElementById("simplemodal-container");
-    modalContainer.style.height = "auto";
+    modalContainer.classList.add("custom-modal")
 
 	let accountStore = document.getElementsByClassName("account-store")[0];
 	let getAccountsEvent = new CustomEvent("PassToBackground", {
