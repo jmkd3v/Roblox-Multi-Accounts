@@ -29,3 +29,13 @@
     background: lightgray !important;
     height: 40px !important;
 }
+
+html {
+    transition: transform 0.25s, filter 0.25s;
+}
+
+html.obscure {
+    transform: scale(1.25);
+    filter: blur(10px);
+    overflow: hidden;
+}
