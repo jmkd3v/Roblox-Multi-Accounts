@@ -68,21 +68,27 @@ function openAccountDialog() {
 	window.dispatchEvent(getAccountsEvent);
 }
 
+const obscureOverlay = document.createElement("div");
+obscureOverlay.classList.add("obscure-overlay");
+document.body.appendChild(obscureOverlay);
+
 function obscureDocument() {
 	let html = document.documentElement;
 	let yOffset = html.scrollTop + (html.clientHeight/2);
 	html.style.transformOrigin = "50vw " + yOffset + "px";
 	html.classList.add("obscure");
+	obscureOverlay.classList.add("obscure");
 }
 
 function disableObscure() {
 	let html = document.documentElement;
 	html.style.overflow = "hidden";
 	html.classList.remove("obscure");
+	obscureOverlay.classList.remove("obscure");
 	setTimeout(() => {
 		html.style.transformOrigin = "";
 		html.style.overflow = "";
-	}, 250)
+	}, 260)
 }
 
 window.addEventListener("FG_openAccountDialog", function (evt) {
