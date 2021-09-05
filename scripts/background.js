@@ -78,16 +78,19 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 			accounts: [
 				{
 					name: "waffle",
+					displayName: "waffle",
 					image:
 						"https://tr.rbxcdn.com/2b4ab4eee0e5531f990ccf6aac76c440/150/150/AvatarHeadshot/Png",
 				},
 				{
 					name: "waffle",
+					displayName: "waffle",
 					image:
 						"https://tr.rbxcdn.com/2b4ab4eee0e5531f990ccf6aac76c440/150/150/AvatarHeadshot/Png",
 				},
 				{
 					name: "waffle",
+					displayName: "waffle",
 					image:
 						"https://tr.rbxcdn.com/2b4ab4eee0e5531f990ccf6aac76c440/150/150/AvatarHeadshot/Png",
 				},

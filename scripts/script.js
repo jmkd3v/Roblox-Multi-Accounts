@@ -1,17 +1,28 @@
-function generateAccount(name, image) {
+function generateAccount(account) {
 	// TODO: React.
 	let baseElement = document.createElement("button");
 	baseElement.classList.add("account");
 
 	let imageElement = document.createElement("img");
 	imageElement.classList.add("account-image");
-	imageElement.src = image;
+	imageElement.src = account.image;
+
+	let nameContainer = document.createElement("div");
+	nameContainer.classList.add("account-name-container")
+
+	let displayNameElement = document.createElement("p");
+	displayNameElement.innerHTML = account.displayName;
+	displayNameElement.classList.add("account-display-name");
 
 	let nameElement = document.createElement("p");
-	nameElement.innerHTML = name;
+	nameElement.innerHTML = account.name;
+	nameElement.classList.add("account-name");
+
+	nameContainer.appendChild(displayNameElement);
+	nameContainer.appendChild(nameElement);
 
 	baseElement.appendChild(imageElement);
-	baseElement.appendChild(nameElement);
+	baseElement.appendChild(nameContainer);
 
 	return baseElement;
 }
@@ -80,7 +91,7 @@ function openAccountDialog() {
 			let accounts = evt.detail.accounts;
 			console.log(accounts);
 			for (let account of accounts) {
-                let accountElement = generateAccount(account.name, account.image);
+                let accountElement = generateAccount(account);
                 accountElement.addEventListener("click", function() {
 					disableBlurObscure();
                     Roblox.Dialog.close();

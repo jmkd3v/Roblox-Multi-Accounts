@@ -12,13 +12,28 @@
     align-items: center !important;
     gap: 10px !important;
 
-    background: #212121 !important;
     border: 1px solid #646464 !important;
     border-radius: 8px;
 
     width: 100% !important;
     margin: 0 !important;
     padding-left: 8px !important;
+}
+
+.light-theme .account {
+    background: #EEEEEE !important;
+}
+
+.dark-theme .account {
+    background: #212121 !important;
+}
+
+.light-theme .account-display-name {
+    color: black;
+}
+
+.dark-theme .account-display-name {
+    color: white;
 }
 
 .account:hover {
@@ -30,6 +45,12 @@
     border-radius: 100% !important;
     background: lightgray !important;
     height: 40px !important;
+}
+
+.account-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 html {
