@@ -33,6 +33,7 @@ document.body.appendChild(blurObscureOverlay);
 
 const hideObscureOverlay = document.createElement("div");
 hideObscureOverlay.classList.add("hide-obscure-overlay");
+hideObscureOverlay.classList.add("hide");
 document.body.appendChild(hideObscureOverlay);
 
 function enableBlurObscure() {
@@ -124,6 +125,11 @@ function openAccountDialog() {
               id: account.id,
             },
           });
+
+          hideObscureOverlay.classList.remove("hide");
+          setTimeout(() => {
+            hideObscureOverlay.classList.add("obscure");
+          }, 10);
         });
 
         accountStore.appendChild(accountElement);

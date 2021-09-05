@@ -86,8 +86,18 @@ html.obscure {
   top: -100vh;
   transition: top 0.5s;
   left: 0;
+}
 
-  background: white;
+.light-theme .hide-obscure-overlay {
+  background: rgb(236, 236, 236);
+}
+
+.dark-theme .hide-obscure-overlay {
+  background: #171717;
+}
+
+.hide-obscure-overlay.hide {
+  display: none;
 }
 
 .hide-obscure-overlay.obscure {
