@@ -39,21 +39,41 @@ html.obscure {
     overflow: hidden;
 }
 
-.obscure-overlay {
+.blur-obscure-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     transition: backdrop-filter 0.25s;
+    z-index: 100;
 }
 
-.obscure-overlay.obscure {
+.blur-obscure-overlay.obscure {
     backdrop-filter: blur(5px);
 }
 
+.hide-obscure-overlay {
+    z-index: 9000;
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    
+    top: -100vh;
+    transition: top 0.5s;
+    left: 0;
+
+    background: white;
+}
+
+.hide-obscure-overlay.obscure {
+    display: block;
+    top: 0vh;
+}
+
 .custom-modal {
-    position: absolute !important;
+    position: fixed !important;
     left: 50vw !important;
     top: 50vh !important;
     transform: translate(-50%, -50%) !important;

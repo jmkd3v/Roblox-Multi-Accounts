@@ -16,6 +16,38 @@ function generateAccount(name, image) {
 	return baseElement;
 }
 
+const blurObscureOverlay = document.createElement("div");
+blurObscureOverlay.classList.add("blur-obscure-overlay");
+document.body.appendChild(blurObscureOverlay);
+
+const hideObscureOverlay = document.createElement("div");
+hideObscureOverlay.classList.add("hide-obscure-overlay");
+document.body.appendChild(hideObscureOverlay);
+
+function enableBlurObscure() {
+	let html = document.documentElement;
+	/*
+	let yOffset = html.scrollTop + (html.clientHeight/2);
+	html.style.transformOrigin = "50vw " + yOffset + "px";
+	html.classList.add("obscure");
+	*/
+	blurObscureOverlay.classList.add("obscure");
+	// html.style.overflow = "hidden";
+}
+
+function disableBlurObscure() {
+	let html = document.documentElement;
+	/*
+	html.style.overflow = "hidden";
+	html.classList.remove("obscure");
+	*/
+	blurObscureOverlay.classList.remove("obscure");
+	setTimeout(() => {
+		// html.style.transformOrigin = "";
+		// html.style.overflow = "";
+	}, 260)
+}
+
 function openAccountDialog() {
 	Roblox.Dialog.close();
 	Roblox.Dialog.open({
@@ -31,7 +63,9 @@ function openAccountDialog() {
     
     // this is a hack because roblox dialogs suck lol
     let modalContainer = document.getElementById("simplemodal-container");
-    modalContainer.classList.add("custom-modal")
+    modalContainer.classList.add("custom-modal");
+	
+	enableBlurObscure();
 
 	let accountStore = document.getElementsByClassName("account-store")[0];
 	let getAccountsEvent = new CustomEvent("PassToBackground", {
@@ -48,6 +82,7 @@ function openAccountDialog() {
 			for (let account of accounts) {
                 let accountElement = generateAccount(account.name, account.image);
                 accountElement.addEventListener("click", function() {
+					disableBlurObscure();
                     Roblox.Dialog.close();
 
                     let accountChosenEvent = new CustomEvent("PassToBackground", {
@@ -66,29 +101,6 @@ function openAccountDialog() {
 	);
 
 	window.dispatchEvent(getAccountsEvent);
-}
-
-const obscureOverlay = document.createElement("div");
-obscureOverlay.classList.add("obscure-overlay");
-document.body.appendChild(obscureOverlay);
-
-function obscureDocument() {
-	let html = document.documentElement;
-	let yOffset = html.scrollTop + (html.clientHeight/2);
-	html.style.transformOrigin = "50vw " + yOffset + "px";
-	html.classList.add("obscure");
-	obscureOverlay.classList.add("obscure");
-}
-
-function disableObscure() {
-	let html = document.documentElement;
-	html.style.overflow = "hidden";
-	html.classList.remove("obscure");
-	obscureOverlay.classList.remove("obscure");
-	setTimeout(() => {
-		html.style.transformOrigin = "";
-		html.style.overflow = "";
-	}, 260)
 }
 
 window.addEventListener("FG_openAccountDialog", function (evt) {
