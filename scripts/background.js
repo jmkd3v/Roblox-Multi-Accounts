@@ -79,18 +79,21 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         {
           name: "waffle",
           displayName: "waffle",
+          id: 1,
           image:
             "https://tr.rbxcdn.com/2b4ab4eee0e5531f990ccf6aac76c440/150/150/AvatarHeadshot/Png",
         },
         {
           name: "waffle",
           displayName: "waffle",
+          id: 2,
           image:
             "https://tr.rbxcdn.com/2b4ab4eee0e5531f990ccf6aac76c440/150/150/AvatarHeadshot/Png",
         },
         {
           name: "waffle",
           displayName: "waffle",
+          id: 3,
           image:
             "https://tr.rbxcdn.com/2b4ab4eee0e5531f990ccf6aac76c440/150/150/AvatarHeadshot/Png",
         },
@@ -100,5 +103,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     setTimeout(function () {
       chrome.tabs.sendMessage(sender.tab.id, { answer: "openAccountDialog" });
     }, 1000);
+  } else if (request.question == "accountChosen") {
+    alert(`Switching to account ${request.id}...`);
   }
 });

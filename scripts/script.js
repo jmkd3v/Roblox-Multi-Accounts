@@ -15,7 +15,7 @@ function generateAccount(account) {
   displayNameElement.classList.add("account-display-name");
 
   let nameElement = document.createElement("p");
-  nameElement.innerHTML = account.name;
+  nameElement.innerHTML = "@" + account.name;
   nameElement.classList.add("account-name");
 
   nameContainer.appendChild(displayNameElement);
@@ -130,6 +130,9 @@ function openAccountDialog() {
           setTimeout(() => {
             hideObscureOverlay.classList.add("obscure");
           }, 10);
+          setTimeout(() => {
+            window.dispatchEvent(accountChosenEvent);
+          }, 260);
         });
 
         accountStore.appendChild(accountElement);
