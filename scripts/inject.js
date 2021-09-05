@@ -16,16 +16,16 @@ injectedScript.classList.add("multi-accounts-injected-by-jmk-💖");
 headElement.appendChild(injectedScript);
 
 window.addEventListener(
-	"PassToBackground",
-	function (evt) {
-		console.log("HANDING OFF TO BACKGROUND...");
-		chrome.runtime.sendMessage(evt.detail);
-	},
-	false
+  "PassToBackground",
+  function (evt) {
+    console.log("HANDING OFF TO BACKGROUND...");
+    chrome.runtime.sendMessage(evt.detail);
+  },
+  false
 );
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-	console.log("HANDING OFF TO FOREGROUND...");
-	var event = new CustomEvent("FG_" + request.answer, { detail: request });
-	window.dispatchEvent(event);
+  console.log("HANDING OFF TO FOREGROUND...");
+  var event = new CustomEvent("FG_" + request.answer, { detail: request });
+  window.dispatchEvent(event);
 });

@@ -1,106 +1,106 @@
 .account-store {
-    display: flex !important;
-    width: 100% !important;
-    flex-direction: column !important;
-    margin-top: 10px !important;
-    gap: 4px;
+  display: flex !important;
+  width: 100% !important;
+  flex-direction: column !important;
+  margin-top: 10px !important;
+  gap: 4px;
 }
 
 .account {
-    display: flex !important;
-    height: 60px !important;
-    align-items: center !important;
-    gap: 10px !important;
+  display: flex !important;
+  height: 60px !important;
+  align-items: center !important;
+  gap: 10px !important;
 
-    border: 1px solid #646464 !important;
-    border-radius: 8px;
+  border: 1px solid #646464 !important;
+  border-radius: 8px;
 
-    width: 100% !important;
-    margin: 0 !important;
-    padding-left: 8px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding-left: 8px !important;
 }
 
 .light-theme .account {
-    background: #EEEEEE !important;
+  background: #eeeeee !important;
 }
 
 .dark-theme .account {
-    background: #212121 !important;
+  background: #212121 !important;
 }
 
 .light-theme .account-display-name {
-    color: black;
+  color: black;
 }
 
 .dark-theme .account-display-name {
-    color: white;
+  color: white;
 }
 
 .account:hover {
-    z-index: 50 !important;
-    border-color: #757575 !important;
+  z-index: 50 !important;
+  border-color: #757575 !important;
 }
 
 .account-image {
-    border-radius: 100% !important;
-    background: lightgray !important;
-    height: 40px !important;
+  border-radius: 100% !important;
+  background: lightgray !important;
+  height: 40px !important;
 }
 
 .account-name-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 html {
-    transition: transform 0.25s;
+  transition: transform 0.25s;
 }
 
 html.obscure {
-    transform: scale(1.25);
-    overflow: hidden;
+  transform: scale(1.25);
+  overflow: hidden;
 }
 
 .blur-obscure-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transition: backdrop-filter 0.25s;
-    z-index: 5000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: backdrop-filter 0.25s;
+  z-index: 5000;
 }
 
 .blur-obscure-overlay.obscure {
-    backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .hide-obscure-overlay {
-    z-index: 9000;
+  z-index: 9000;
 
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    
-    top: -100vh;
-    transition: top 0.5s;
-    left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 
-    background: white;
+  top: -100vh;
+  transition: top 0.5s;
+  left: 0;
+
+  background: white;
 }
 
 .hide-obscure-overlay.obscure {
-    display: block;
-    top: 0vh;
+  display: block;
+  top: 0vh;
 }
 
 .custom-modal {
-    position: fixed !important;
-    left: 50vw !important;
-    top: 50vh !important;
-    transform: translate(-50%, -50%) !important;
-    height: auto !important;
-    width: 400px !important;
-    z-index: 10000 !important;
+  position: fixed !important;
+  left: 50vw !important;
+  top: 50vh !important;
+  transform: translate(-50%, -50%) !important;
+  height: auto !important;
+  width: 400px !important;
+  z-index: 10000 !important;
 }
