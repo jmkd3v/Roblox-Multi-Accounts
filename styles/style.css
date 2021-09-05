@@ -3,6 +3,7 @@
     width: 100% !important;
     flex-direction: column !important;
     margin-top: 10px !important;
+    gap: 4px;
 }
 
 .account {
@@ -10,13 +11,14 @@
     height: 60px !important;
     align-items: center !important;
     gap: 10px !important;
-    border: #646464 !important;
-    border-width: 1px 0px !important;
-    border-style: solid !important;
+
+    background: #212121 !important;
+    border: 1px solid #646464 !important;
+    border-radius: 8px;
+
     width: 100% !important;
-    background: transparent !important;
     margin: 0 !important;
-    padding-left: 5px !important;
+    padding-left: 8px !important;
 }
 
 .account:hover {
@@ -46,7 +48,7 @@ html.obscure {
     top: 0;
     left: 0;
     transition: backdrop-filter 0.25s;
-    z-index: 100;
+    z-index: 5000;
 }
 
 .blur-obscure-overlay.obscure {
@@ -79,4 +81,5 @@ html.obscure {
     transform: translate(-50%, -50%) !important;
     height: auto !important;
     width: 400px !important;
+    z-index: 10000 !important;
 }
