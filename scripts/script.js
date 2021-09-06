@@ -1,3 +1,9 @@
+try {
+  Roblox = Roblox;
+} catch {
+  throw new Error("Page doesn't have a valid Roblox object.");
+}
+
 function generateAccount(account) {
   // TODO: React.
   let baseElement = document.createElement("button");
