@@ -1,7 +1,8 @@
 try {
   Roblox = Roblox;
+  React = React;
 } catch {
-  throw new Error("Page doesn't have a valid Roblox object.");
+  throw new Error("Page doesn't have a valid Roblox or React object.");
 }
 
 function generateAccount(account) {

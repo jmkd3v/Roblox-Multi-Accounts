@@ -122,3 +122,8 @@ html.obscure {
   width: 400px !important;
   z-index: 10000 !important;
 }
+
+#BodyWrapper {
+  width: 100% !important;
+  background: transparent;
+}

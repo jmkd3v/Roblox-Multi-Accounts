@@ -100,9 +100,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       ],
     });
   } else if (request.question == "ready") {
+    /*
     setTimeout(function () {
       chrome.tabs.sendMessage(sender.tab.id, { answer: "openAccountDialog" });
     }, 1000);
+    */
   } else if (request.question == "accountChosen") {
     alert(`Switching to account ${request.id}...`);
   }
